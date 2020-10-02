@@ -36,11 +36,41 @@ Use a laptop as the server to communicate with the Pis (Python code). On the ser
 Connection and sequence diagram. 
 </p>
 
+
+## Emergency Vehicle Detection
+
+- **Dataset**: Emergency vs Non-Emergency Vehicle Classification dataset from Kaggle
+    - Contains the image name and correct class for 1646 train images.
+    - This dataset contains labels
+    - Does not contain the Yolo required annotation
+- **Generate annotation for YOLOV4**: 
+    - Generate image annotations in the images and annotations in the Darknet format.
+    - Use YOLOv4 Darknet detect all the vehicles 
+    - Transform the output format to YOLOV4 required bounding box input format
+    - Output the detected bounding box
+    - Write the bounding box annotation to a .txt file
+- **Train YOLOv4 tiny darknet**
+    - Customize training configuration
+    -  Train custom YOLOv4 detector
+    -  Save the YOLOv4 .weights file
+- **Convert Darknet Model to TensorFlow Lite**
+    -  Convert .weights file to apply in TensorFlow Lite use the tool TensorFlow-YOLOv4-TFLite
+    -  Convert from Darknet to TensorFlow
+    -  Convert from TensorFlow SavedModel to TensorFlow Lite
+    -  Save .tflite file to use on Raspberry Pi
+
+<p align="center">
+  
+  <img width="300" src="doc/em_detect1.gif"> 
+  
+  Trained YoloV4 model use self annotated emergency vehicle dataset.
+</p>
+
 ## Demo
 
 <p align="center">
   
-  <img width="300" src="doc/car_detect.gif"> 
+  <img width="600" src="doc/car_detect1.gif"> 
   
   Camera detect the emergency vehicle using Tensorflow LITE. 
 </p>
