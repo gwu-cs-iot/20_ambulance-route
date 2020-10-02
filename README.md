@@ -61,7 +61,7 @@ Connection and sequence diagram.
 
 <p align="center">
   
-  <img width="300" src="doc/em_detect1.gif"> 
+  <img width="600" src="doc/em_detect1.gif"> 
   
   Trained YoloV4 model use self annotated emergency vehicle dataset.
 </p>
@@ -70,7 +70,7 @@ Connection and sequence diagram.
 
 <p align="center">
   
-  <img width="600" src="doc/car_detect1.gif"> 
+  <img width="600" src="doc/car_detect.gif"> 
   
   Camera detect the emergency vehicle using Tensorflow LITE. 
 </p>
